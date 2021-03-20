@@ -1,7 +1,8 @@
 require "benchmark"
-require_relative "./linear_search"
-require_relative "./binary_search"
-require_relative "./bubble_sort"
+require_relative "./searching/linear_search"
+require_relative "./searching/binary_search"
+require_relative "./sorting/bubble_sort"
+require_relative "./sorting/selection_sort"
 
 puts("Running performance tests on different algorithms (measured in ms)")
 
@@ -26,6 +27,19 @@ puts("lower: #{lower_bound.to_s}, middle: #{middle_bound.to_s}, upper: #{upper_b
 average: #{average.to_s}")
 
 puts("\nBubble Sort:")
-average = Benchmark.realtime { bubble_sort(arr.take(1_000).shuffle) } * 1000
+lower_bound = Benchmark.realtime { bubble_sort(arr.take(10).shuffle) } * 1000
+middle_bound = Benchmark.realtime { bubble_sort(arr.take(100).shuffle) } * 1000
+upper_bound = Benchmark.realtime { bubble_sort(arr.take(1_000).shuffle) } * 1000
+average = (lower_bound + middle_bound + upper_bound) / 3
 
-puts("average: #{average.to_s}")
+puts("lower: #{lower_bound.to_s}, middle: #{middle_bound.to_s}, upper: #{upper_bound.to_s},
+average: #{average.to_s}")
+
+puts("\nSelection Sort:")
+lower_bound = Benchmark.realtime { selection_sort(arr.take(10).shuffle) } * 1000
+middle_bound = Benchmark.realtime { selection_sort(arr.take(100).shuffle) } * 1000
+upper_bound = Benchmark.realtime { selection_sort(arr.take(1_000).shuffle) } * 1000
+average = (lower_bound + middle_bound + upper_bound) / 3
+
+puts("lower: #{lower_bound.to_s}, middle: #{middle_bound.to_s}, upper: #{upper_bound.to_s},
+average: #{average.to_s}")
