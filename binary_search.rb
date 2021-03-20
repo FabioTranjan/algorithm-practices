@@ -3,8 +3,6 @@
 # Improved version of linear search, using binary search instead
 # Performance: N linear
 
-require "benchmark"
-
 def binary_search(array, search_value)
     lower_bound = 0
     upper_bound = array.length - 1
