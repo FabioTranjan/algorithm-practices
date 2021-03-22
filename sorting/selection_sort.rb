@@ -1,7 +1,7 @@
 # Selection Sort algorithm
 #
 # Basic algorithm to sort an array
-# Performance: N2 quadratic
+# Performance: N2/2 quadratic
 
 def selection_sort(array)
   (0..(array.length - 2)).to_a.each do |i|

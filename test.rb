@@ -3,6 +3,7 @@ require_relative "./searching/linear_search"
 require_relative "./searching/binary_search"
 require_relative "./sorting/bubble_sort"
 require_relative "./sorting/selection_sort"
+require_relative "./sorting/insertion_sort"
 
 puts("Running performance tests on different algorithms (measured in ms)")
 
@@ -27,19 +28,19 @@ puts("lower: #{lower_bound.to_s}, middle: #{middle_bound.to_s}, upper: #{upper_b
 average: #{average.to_s}")
 
 puts("\nBubble Sort:")
-lower_bound = Benchmark.realtime { bubble_sort(arr.take(10).shuffle) } * 1000
-middle_bound = Benchmark.realtime { bubble_sort(arr.take(100).shuffle) } * 1000
-upper_bound = Benchmark.realtime { bubble_sort(arr.take(1_000).shuffle) } * 1000
-average = (lower_bound + middle_bound + upper_bound) / 3
-
-puts("lower: #{lower_bound.to_s}, middle: #{middle_bound.to_s}, upper: #{upper_bound.to_s},
-average: #{average.to_s}")
+worst_case = Benchmark.realtime { bubble_sort(arr.take(2_000).reverse) } * 1000
+average_case = Benchmark.realtime { bubble_sort(arr.take(2_000).shuffle) } * 1000
+best_case = Benchmark.realtime { bubble_sort(arr.take(2_000)) } * 1000
+puts("worst: #{worst_case.to_s}, average: #{average_case.to_s}, best: #{best_case.to_s}")
 
 puts("\nSelection Sort:")
-lower_bound = Benchmark.realtime { selection_sort(arr.take(10).shuffle) } * 1000
-middle_bound = Benchmark.realtime { selection_sort(arr.take(100).shuffle) } * 1000
-upper_bound = Benchmark.realtime { selection_sort(arr.take(1_000).shuffle) } * 1000
-average = (lower_bound + middle_bound + upper_bound) / 3
+worst_case = Benchmark.realtime { selection_sort(arr.take(2_000).reverse) } * 1000
+average_case = Benchmark.realtime { selection_sort(arr.take(2_000).shuffle) } * 1000
+best_case = Benchmark.realtime { selection_sort(arr.take(2_000)) } * 1000
+puts("worst: #{worst_case.to_s}, average: #{average_case.to_s}, best: #{best_case.to_s}")
 
-puts("lower: #{lower_bound.to_s}, middle: #{middle_bound.to_s}, upper: #{upper_bound.to_s},
-average: #{average.to_s}")
+puts("\nInsertion Sort:")
+worst_case = Benchmark.realtime { insertion_sort(arr.take(2_000).reverse) } * 1000
+average_case = Benchmark.realtime { insertion_sort(arr.take(2_000).shuffle) } * 1000
+best_case = Benchmark.realtime { insertion_sort(arr.take(2_000)) } * 1000
+puts("worst: #{worst_case.to_s}, average: #{average_case.to_s}, best: #{best_case.to_s}")
