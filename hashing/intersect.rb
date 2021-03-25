@@ -8,7 +8,7 @@ def intersect(array1, array2)
   mergedArray = []
 
   array1.each do |a1|
-    hashTable[a1] = true;
+    hashTable[a1] = true
   end
 
   array2.each do |a2|
