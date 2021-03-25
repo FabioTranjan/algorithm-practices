@@ -1,7 +1,7 @@
 # Binary Search algorithm
 #
 # Improved version of linear search, using binary search instead
-# Performance: logN logarithmic
+# Performance: O(LogN) logarithmic
 
 def binary_search(array, search_value)
     lower_bound = 0

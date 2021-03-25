@@ -1,7 +1,7 @@
 # Linear Search algorithm
 #
 # Most basic algorithm used to find a value inside an array
-# Performance: N linear
+# Performance: O(N) linear
 
 def linear_search(array, search_value)
   array.each_with_index do |element, index|

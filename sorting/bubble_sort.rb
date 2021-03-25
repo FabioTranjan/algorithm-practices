@@ -1,7 +1,7 @@
 # Bubble Sort algorithm
 #
 # Basic algorithm to sort an array
-# Performance: N2 quadratic
+# Performance: O(N2) quadratic
 
 def bubble_sort(array)
   unsorted_until_index = array.length - 1

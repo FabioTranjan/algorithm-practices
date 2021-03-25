@@ -1,7 +1,7 @@
 # Insertion Sort algorithm
 #
 # Basic algorithm to sort an array
-# Performance: N2 + 2N
+# Performance: O(N2) quadratic
 
 def insertion_sort(array)
   (1..array.length - 1).to_a.each do |index|
