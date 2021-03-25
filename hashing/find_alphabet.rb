@@ -1,6 +1,6 @@
 # Find alphabet letter
 #
-# Basic algorithm to find missing alphabet letter from a sentence
+# Algorithm to find missing alphabet letter from a sentence
 # Performance: O(N) linear
 
 def find_alphabet(string)

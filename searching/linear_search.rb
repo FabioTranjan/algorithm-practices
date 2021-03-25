@@ -1,6 +1,6 @@
 # Linear Search algorithm
 #
-# Most basic algorithm used to find a value inside an array
+# Most Algorithm used to find a value inside an array
 # Performance: O(N) linear
 
 def linear_search(array, search_value)

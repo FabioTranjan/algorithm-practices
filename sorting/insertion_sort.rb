@@ -1,6 +1,6 @@
 # Insertion Sort algorithm
 #
-# Basic algorithm to sort an array
+# Algorithm to sort an array
 # Performance: O(N2) quadratic
 
 def insertion_sort(array)

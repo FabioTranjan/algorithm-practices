@@ -1,6 +1,6 @@
 # Find first non duplicated
 #
-# Basic algorithm to find non-duplicated character in a string
+# Algorithm to find non-duplicated character in a string
 # Performance: O(N) linear
 
 def find_non_duplicate(string)

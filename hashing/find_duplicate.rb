@@ -1,6 +1,6 @@
 # Find duplicate algorithm
 #
-# Basic algorithm to find a duplicate value on the array
+# Algorithm to find a duplicate value on the array
 # Performance: O(N) linear
 
 def find_duplicate(array)

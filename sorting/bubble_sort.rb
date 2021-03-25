@@ -1,6 +1,6 @@
 # Bubble Sort algorithm
 #
-# Basic algorithm to sort an array
+# Algorithm to sort an array
 # Performance: O(N2) quadratic
 
 def bubble_sort(array)

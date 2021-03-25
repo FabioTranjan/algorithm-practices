@@ -1,6 +1,6 @@
 # Intersetction algorithm
 #
-# Basic algorithm to intersect two arrays
+# Algorithm to intersect two arrays
 # Performance: O(N) linear
 
 def intersect(array1, array2)
