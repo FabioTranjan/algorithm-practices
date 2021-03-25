@@ -1,3 +1,3 @@
 # algorithms-collection
 
-Collection used to learn experiment algorithms and data structures.
+Collection used to experiment algorithms and data structures.
