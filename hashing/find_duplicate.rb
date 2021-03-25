@@ -4,11 +4,11 @@
 # Performance: O(N) linear
 
 def find_duplicate(array)
-  hashTable = {}
+  hash_table = {}
 
   array.each do |a1|
-    return a1 if hashTable[a1]
-    hashTable[a1] = true
+    return a1 if hash_table[a1]
+    hash_table[a1] = true
   end
 
   return
