@@ -4,6 +4,7 @@ require_relative "./searching/binary_search"
 require_relative "./sorting/bubble_sort"
 require_relative "./sorting/selection_sort"
 require_relative "./sorting/insertion_sort"
+require_relative "./sorting/quick_sort"
 
 puts("Running performance tests on different algorithms (measured in ms)")
 
@@ -43,4 +44,10 @@ puts("\nInsertion Sort:")
 worst_case = Benchmark.realtime { insertion_sort(arr.take(2_000).reverse) } * 1000
 average_case = Benchmark.realtime { insertion_sort(arr.take(2_000).shuffle) } * 1000
 best_case = Benchmark.realtime { insertion_sort(arr.take(2_000)) } * 1000
+puts("worst: #{worst_case.to_s}, average: #{average_case.to_s}, best: #{best_case.to_s}")
+
+puts("\nQuick Sort:")
+worst_case = Benchmark.realtime { QuickSort.new(arr.take(2_000).reverse).run!(0, 1999) } * 1000
+average_case = Benchmark.realtime { QuickSort.new(arr.take(2_000).shuffle).run!(0, 1999) } * 1000
+best_case = Benchmark.realtime { QuickSort.new(arr.take(2_000)).run!(0, 1999) } * 1000
 puts("worst: #{worst_case.to_s}, average: #{average_case.to_s}, best: #{best_case.to_s}")
