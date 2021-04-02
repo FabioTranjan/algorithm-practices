@@ -1,7 +1,7 @@
 # Quicksort algorithm
 #
 # Algorithm to sort an array based on recursion and partitioning
-# Performance: O(N2) quadratic
+# Performance: O(N * logN) quadratic
 
 class QuickSort
   attr_reader :array
@@ -50,8 +50,3 @@ class QuickSort
     run!(pivot_index + 1, right_index)
   end
 end
-
-array = [0, 5, 2, 1, 6, 3]
-quick_sort = QuickSort.new(array)
-quick_sort.run!(0, array.length - 1)
-p quick_sort.array
