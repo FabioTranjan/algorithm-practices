@@ -1,3 +1,5 @@
+# Util class used to partition an array
+
 class SortableArray
   attr_reader :array
 
