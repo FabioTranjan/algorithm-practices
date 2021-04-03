@@ -75,6 +75,15 @@ class LinkedList
     node_after_deleted_node = current_node.next_node.next_node
     current_node.next_node = node_after_deleted_node
   end
+
+  def print
+    current_node = first_node
+
+    while current_node != nil  do
+      p current_node.data
+      current_node = current_node.next_node
+    end
+  end
 end
 
 node_1 = Node.new('once')
@@ -88,7 +97,4 @@ node_3.next_node = node_4
 
 list = LinkedList.new(node_1)
 
-p list.read(3)
-p list.index_of('time')
-p list.insert_at_index(3, 'purple')
-p list.read(3)
+list.print
