@@ -39,6 +39,16 @@ class TreeNode
     p value
     right.print unless right.nil?
   end
+
+  def greatest
+    return self if right.nil? && left.nil?
+
+    if self.right
+      right.greatest
+    elsif self.left
+      left.greatest
+    end
+  end
 end
 
 left = TreeNode.new(1, nil, nil)
@@ -48,3 +58,5 @@ root = TreeNode.new(2, left, right)
 p root.search(1)
 root.insert(4)
 root.print
+
+p root.greatest
