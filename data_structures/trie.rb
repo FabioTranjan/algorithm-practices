@@ -46,4 +46,11 @@ class Trie
 
     return words
   end
+
+  def autocomplete(prefix)
+    currentNode = search(prefix)
+    return nil unless currentNode
+
+    return collect_all_words(currentNode)
+  end
 end
