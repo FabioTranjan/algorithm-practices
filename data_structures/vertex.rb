@@ -53,6 +53,26 @@ class Vertex
 
     return nil
   end
+
+  def bfs(vertex, search_value, visited_vertices={})
+    queue = QueueArray.new
+
+    visited_vertices[vertex.value] = true
+    queue.enqueue(vertex)
+
+    while queue.read
+      current_vertex = queue.dequeue
+      return current_vertex if current_vertex.value == search_value
+
+      current_vertex.adjacent_vertices.each do |adjacent_vertex|
+        next if visited_vertices[adjacent_vertex.value]
+        visited_vertices[adjacent_vertex.value] = true
+        queue.enqueue(adjacent_vertex)
+      end
+    end
+
+    return nil
+  end
 end
 
 vertex_a = Vertex.new('a')
@@ -67,4 +87,4 @@ vertex_a.adjacent_vertices = [vertex_b, vertex_c, vertex_d]
 vertex_b.adjacent_vertices = [vertex_e, vertex_f]
 vertex_c.adjacent_vertices = [vertex_g]
 
-p vertex_a.dfs(vertex_a, 'g')
+p vertex_a.bfs(vertex_a, 'g')
