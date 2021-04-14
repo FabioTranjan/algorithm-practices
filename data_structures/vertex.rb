@@ -39,4 +39,32 @@ class Vertex
       end
     end
   end
+
+  def dfs(vertex, search_value, visited_vertices={})
+    return vertex if vertex.value == search_value
+    visited_vertices[vertex.value] = true
+
+    vertex.adjacent_vertices.each do |adjacent_vertex|
+      next if visited_vertices[adjacent_vertex.value]
+      return adjacent_vertex if adjacent_vertex.value == search_value
+      vertex_were_searching_for = dfs(adjacent_vertex, search_value, visited_vertices)
+      return vertex_were_searching_for if vertex_were_searching_for
+    end
+
+    return nil
+  end
 end
+
+vertex_a = Vertex.new('a')
+vertex_b = Vertex.new('b')
+vertex_c = Vertex.new('c')
+vertex_d = Vertex.new('d')
+vertex_e = Vertex.new('e')
+vertex_f = Vertex.new('f')
+vertex_g = Vertex.new('g')
+
+vertex_a.adjacent_vertices = [vertex_b, vertex_c, vertex_d]
+vertex_b.adjacent_vertices = [vertex_e, vertex_f]
+vertex_c.adjacent_vertices = [vertex_g]
+
+p vertex_a.dfs(vertex_a, 'g')
